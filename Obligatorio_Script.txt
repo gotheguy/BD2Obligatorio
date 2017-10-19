@@ -1,0 +1,77 @@
+/*      UNIVERSIDAD       */
+
+ALTER TABLE Universidad
+	ADD CONSTRAINT nombre_Pk PRIMARY KEY (nombre);
+Alter TABLE Universidad
+    add telefono varchar(20);
+
+	
+/*     INVESTIGADOR     */
+
+Alter TABLE Investigador
+    drop column idInvestigador;
+Alter TABLE Investigador
+	add  idInvestigador int IDENTITY(1,1) PRIMARY KEY;
+Alter TABLE Investigador
+	add CONSTRAINT CK_nivelInvestig CHECK (nivelInvestig IN ('EGrado','EMaestria','EDoctor','Doctor'));
+Alter TABLE Investigador
+	add CONSTRAINT mail_UQ UNIQUE;
+
+	
+/*      TRABAJO     */
+Alter TABLE Trabajo
+    drop column descripTrab;
+Alter TABLE Trabajo
+    add descripTrab varchar(200) not null;
+Alter Table Trabajo
+	add CONSTRAINT CK_tipoTrab CHECK (tipoTrab IN ('poster','articulo','capitulo','otro'));
+ALTER TABLE Trabajo
+	ADD CONSTRAINT lugarPublic_Fk_Lugares FOREIGN KEY (lugarPublic)
+	REFERENCES Lugares (idLugar);
+	
+/*    Tags      */
+Alter TABLE Tags
+	drop column idTag;
+Alter TABLE Tags
+	add  idTag int IDENTITY(1,2) PRIMARY KEY;
+
+	
+/*      TTags     */
+ALTER TABLE TTags
+	ADD CONSTRAINT idTag_Fk_Tags FOREIGN KEY (idTag)
+	REFERENCES Tags (idtag);
+ALTER TABLE TTags
+	ADD CONSTRAINT idTrab_Fk_Trabajo FOREIGN KEY (idTrab)
+	REFERENCES Trabajo (idTrab);
+	
+	
+/*    TAutores   */
+Alter TABLE TAutores
+    drop column rolinvestig;
+Alter TABLE TAutores
+	add  rolinvestig varchar (20);
+Alter TABLE TAutores
+	add CONSTRAINT CK_rolinvestig CHECK (rolinvestig IN ('autor-ppal','autor-sec','autor-director'));
+ALTER TABLE TAutores
+	ADD CONSTRAINT idInvestigador_Fk_Investigador FOREIGN KEY (idInvestigador)
+	REFERENCES Investigador (idInvestigador);
+	
+	
+/*     Referencias    */
+Alter TABLE Referencias
+	add CONSTRAINT CK_idTrab CHECK (idTrab <> idTrabReferenciado);
+
+
+/*   Lugares   */
+Alter TABLE Lugares
+	add column TipoLugar varchar (20);
+Alter TABLE Lugares
+    drop column nombre;
+Alter TABLE Lugares
+	add  nombre varchar (250);
+Alter TABLE Lugares
+	add CONSTRAINT nombre_UQ Unique (nombre);
+Alter TABLE Lugares
+	add CONSTRAINT CK_TipoLugar CHECK (TipoLugar IN ('Congresos','Revistas','Libros'));
+Alter TABLE Lugares
+	add CONSTRAINT CK_nivelLugar CHECK (niveLugar BETWEEN 1 AND 4);
