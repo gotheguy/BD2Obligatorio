@@ -1,80 +1,94 @@
 /* Creacion de la BD */
-CREATE DATABASE obligatorioOriginal
+CREATE DATABASE BD2Obligatorio
 GO
-USE obligatorioOriginal
+
+USE BD2Obligatorio
 GO
 /* Creacion de tablas */
 
 BEGIN TRANSACTION
 GO
 
-create table Universidad (
-	nombre varchar(100), 
-	pais varchar(50) not null, 
-	ciudad varchar(50) not null 
-	)
+CREATE TABLE Universidad 
+(
+	nombre	VARCHAR(100), 
+	pais	VARCHAR(50) NOT NULL, 
+	ciudad	VARCHAR(50) NOT NULL 
+)
 GO
 --SELECT * FROM Universidad
 
-create table Investigador (
-	idInvestigador int, 
-	nombre varchar(100) not null, 
-	mail varchar(200), 
-	telefono varchar(20),
-	carrera varchar(50), 
-	nivelInvestig varchar(20) not null, 
-	cantTrabPub int )
+CREATE TABLE Investigador 
+(
+	idInvestigador	INT, 
+	nombre			VARCHAR(100) NOT NULL, 
+	mail			VARCHAR(200), 
+	telefono		VARCHAR(20),
+	carrera			VARCHAR(50), 
+	nivelInvestig	VARCHAR(20) NOT NULL, 
+	cantTrabPub		INT 
+)
 GO
 --SELECT * FROM Investigador
 
-create Table Trabajo (
-		idTrab int not null, 
-		nomTrab varchar(100) not null, 
-		descripTrab varchar(10) not null, 
-		tipoTrab varchar(20) not null, 
-		fechaInicio date not null, 
-		linkTrab varchar(200),
-        lugarPublic int)
+CREATE TABLE Trabajo 
+(
+	idTrab		INT NOT NULL, 
+	nomTrab		VARCHAR(100) NOT NULL, 
+	descripTrab VARCHAR(10) NOT NULL, 
+	tipoTrab	VARCHAR(20) NOT NULL, 
+	fechaInicio DATE NOT NULL, 
+	linkTrab	VARCHAR(200),
+    lugarPublic INT
+)
 GO
 --SELECT * FROM Trabajo
 
-create table Tags (
-	idtag int, 
-	palabra varchar(50))
+CREATE TABLE Tags 
+(
+	idtag	INT, 
+	palabra VARCHAR(50)
+)
 GO
 --SELECT * FROM Tags
 
-create Table TTags (
-	idTrab Varchar(10) not null, 
-	idTag int not null
-	)
+CREATE TABLE TTags
+(
+	idTrab	VARCHAR(10) NOT NULL, 
+	idTag	INT NOT NULL
+)
 GO
 --SELECT * FROM TTags	
 
-create Table TAutores (
-	idTrab varchar(10) not null,
-	idInvestigador int not null, 
-	rolinvestig varchar(3))
+CREATE TABLE TAutores 
+(
+	idTrab			VARCHAR(10) NOT NULL,
+	idInvestigador	INT NOT NULL, 
+	rolinvestig		VARCHAR(3)
+)
 GO
 --SELECT * FROM TAutores
 	
-create Table Referencias (
-	idTrab varchar(10) not null,
-	idTrabReferenciado varchar(10) not null
-	)
+CREATE TABLE Referencias 
+(
+	idTrab				VARCHAR(10) NOT NULL,
+	idTrabReferenciado	VARCHAR(10) NOT NULL
+)
 GO
 --SELECT * FROM Referencias
 	
-create Table Lugares (
-	idLugar int primary key, 
-	nombre varchar(100) not null, 
-	nivelLugar int , 
-	anio int not null, 
-	mes int not null, 
-	diaIni int, 
-	diaFin int, 
-	link varchar(200), 
-	universidad varchar(50) )
+CREATE TABLE Lugares 
+(
+	idLugar		INT PRIMARY KEY, 
+	nombre		VARCHAR(100) NOT NULL, 
+	nivelLugar	INT , 
+	anio		INT NOT NULL, 
+	mes			INT NOT NULL, 
+	diaIni		INT, 
+	diaFin		INT, 
+	link		VARCHAR(200), 
+	universidad VARCHAR(50) 
+)
 GO
 --SELECT * FROM Lugares
 
@@ -84,4 +98,4 @@ GO
 --ROLLBACK TRANSACTION
 
 
-SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+--SELECT * FROM INFORMATION_SCHEMA.COLUMNS
