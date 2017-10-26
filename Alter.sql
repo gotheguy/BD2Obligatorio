@@ -8,10 +8,10 @@ ALTER TABLE Universidad
 	DROP COLUMN nombre;
 GO
 ALTER TABLE Universidad
-	ADD nombre VARCHAR (50) PRIMARY KEY;
+	ADD nombre VARCHAR(50) PRIMARY KEY;
 GO
 ALTER TABLE Universidad
-    ADD telefono VARCHAR(30) NOT NULL;
+    ADD telefono VARCHAR (30) NOT NULL;
 GO
 	
 /*     INVESTIGADOR     */
@@ -23,7 +23,7 @@ ALTER TABLE Investigador
 	ADD idInvestigador INT IDENTITY(1,1) PRIMARY KEY;
 GO
 ALTER TABLE Investigador
-	ADD idUniversidad VARCHAR (50) FOREIGN KEY (idUniversidad) 
+	ADD idUniversidad VARCHAR(50) FOREIGN KEY (idUniversidad) 
 	REFERENCES Universidad(nombre) NOT NULL;
 GO
 ALTER TABLE Investigador
@@ -40,14 +40,14 @@ ALTER TABLE Trabajo
     DROP COLUMN idTrab;
 GO
 ALTER TABLE Trabajo
-    ADD idTrab VARCHAR(20) PRIMARY KEY;
+    ADD idTrab VARCHAR (20) PRIMARY KEY;
 GO
 ------------------------------------------------------------------------------
 ALTER TABLE Trabajo
     DROP COLUMN descripTrab;
 GO
 ALTER TABLE Trabajo
-    ADD descripTrab VARCHAR(200) NOT NULL;
+    ADD descripTrab VARCHAR (200) NOT NULL;
 GO
 ALTER Table Trabajo
 	ADD CONSTRAINT CK_tipoTrab_Trabajo CHECK (tipoTrab IN ('poster','articulo','capitulo','otro'));
@@ -70,7 +70,7 @@ ALTER TABLE TTags
 	DROP COLUMN idTrab;
 GO
 ALTER TABLE TTags
-	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ADD idTrab VARCHAR(20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE TTags
 	ADD CONSTRAINT FK_idTag_TTags FOREIGN KEY (idTag)
@@ -89,13 +89,10 @@ ALTER TABLE TAutores
 	DROP COLUMN idTrab;
 GO
 ALTER TABLE TAutores
-	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ADD idTrab VARCHAR(20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE TAutores
-    DROP COLUMN rolinvestig;
-GO
-ALTER TABLE TAutores
-	ADD rolinvestig VARCHAR (20);
+	ALTER COLUMN rolinvestig VARCHAR(20);
 GO
 ALTER TABLE TAutores
 	ADD CONSTRAINT CK_rolinvestig_TAutores CHECK (rolinvestig IN ('autor-ppal','autor-sec','autor-director'));
@@ -114,10 +111,7 @@ GO
 	
 /*     Referencias    */
 ALTER TABLE Referencias
-	DROP COLUMN idTrab;
-GO
-ALTER TABLE Referencias
-	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ALTER COLUMN idTrab VARCHAR(20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE Referencias
 	ADD CONSTRAINT CK_idTrab_Referencias CHECK (idTrab <> idTrabReferenciado);
@@ -132,13 +126,16 @@ GO
 
 /*   Lugares   */
 ALTER TABLE Lugares
-	ADD TipoLugar VARCHAR(20);
+	ADD TipoLugar VARCHAR (20);
 GO
 ALTER TABLE Lugares
-    DROP COLUMN nombre;
+	ADD diaIniCon INT;
 GO
 ALTER TABLE Lugares
-	ADD nombre VARCHAR(250) NOT NULL;
+	ADD diaFinCon INT;
+GO
+ALTER TABLE Lugares
+	ALTER COLUMN nombre VARCHAR (250) NOT NULL;
 GO
 ALTER TABLE Lugares
 	ADD CONSTRAINT UQ_nombre_Lugares UNIQUE (nombre);
@@ -151,6 +148,18 @@ ALTER TABLE Lugares
 GO
 ALTER TABLE Lugares
 	ADD CONSTRAINT FK_universidad_Lugares FOREIGN KEY (universidad) REFERENCES Universidad (nombre);
+GO
+ALTER TABLE Lugares
+	ADD CONSTRAINT CK_diaIni_Lugares CHECK (TipoLugar IN ('Revistas','Libros'));
+GO
+ALTER TABLE Lugares
+	ADD CONSTRAINT CK_diaFin_Lugares CHECK (TipoLugar IN ('Revistas','Libros'));
+GO
+ALTER TABLE Lugares
+	ADD CONSTRAINT CK_diaIniCon_Lugares CHECK (TipoLugar = 'Congresos');
+GO
+ALTER TABLE Lugares
+	ADD CONSTRAINT CK_diaFinCon_Lugares CHECK (TipoLugar = 'Congresos');
 GO
 
 

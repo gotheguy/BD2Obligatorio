@@ -51,7 +51,7 @@ GO
 
 CREATE TABLE Tags 
 (
-	idtag	INT, 
+	idTag	INT, 
 	palabra VARCHAR(50)
 )
 GO
@@ -86,11 +86,11 @@ CREATE TABLE Lugares
 (
 	idLugar		INT PRIMARY KEY, 
 	nombre		VARCHAR(100) NOT NULL, 
-	nivelLugar	INT , 
+	nivelLugar	INT, 
 	anio		INT NOT NULL, 
 	mes			INT NOT NULL, 
 	diaIni		INT, 
-	diaFin		INT, 
+	diaFin		INT,
 	link		VARCHAR(200), 
 	universidad VARCHAR(50) 
 )
