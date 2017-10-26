@@ -1,0 +1,86 @@
+-- UNIVERSIDAD DATOS VÁLIDOS --
+INSERT INTO Universidad VALUES ('Uruguay','Montevideo','ORT','29021505');
+INSERT INTO Universidad VALUES ('Uruguay','Montevideo','Universidad de Montevideo','27074461');
+INSERT INTO Universidad VALUES ('Uruguay','Montevideo','UDELAR','24009201');
+INSERT INTO Universidad VALUES ('Uruguay','Montevideo','Universidad Catolica','24872717');
+INSERT INTO Universidad VALUES ('Uruguay','Canelones','Universidad de Canelones','26820989');
+INSERT INTO Universidad VALUES ('Uruguay','Colonia','Universidad de la Empresa','45221400');
+
+--X-X-X-X- UNIVERSIDAD DATOS INVÁLIDOS --X-X-X-X-
+INSERT INTO Universidad VALUES ('Universidad Catolica','Uruguay','Salto','47325467');
+INSERT INTO Universidad VALUES ('Uruguay','Salto','Universidad Florida');
+INSERT INTO Universidad VALUES ('Uruguay','','UDELAR','20109201');
+INSERT INTO Universidad VALUES ('','Colonia','Universidad Catolica','24872717');
+
+-- INVESTIGADOR DATOS VÁLIDOS --
+INSERT INTO Investigador VALUES ('Rodrigo Rodriguez','rr@gmail.com','099660508','Investigador','EGrado',2,'UDELAR');
+INSERT INTO Investigador VALUES ('Marcelo Sosa','sosaM@gmail.com','093664501','Investigador','EGrado',0,'Universidad de Montevideo');
+INSERT INTO Investigador VALUES ('Juan Perez','jp@gmail.com','098743213','Contador','EMaestria',5,'ORT');
+INSERT INTO Investigador VALUES ('Gonzalo Gonzalez','gongonza@gmail.com','091563487','Investigador','EDoctor',1,'ORT');
+INSERT INTO Investigador VALUES ('Pablo Sosa','PabloSosa@gmail.com','095663207','Contador','EMaestria',0,'Universidad Catolica');
+INSERT INTO Investigador VALUES ('Juan Colo','colorado@gmail.com','094755203','Investigador','EDoctor',1,'ORT');
+INSERT INTO Investigador VALUES ('Luis Gonzalez','LuisG@gmail.com','091000123','Investigador','EGrado',2,'Universidad de la Empresa');
+
+--X-X-X-X- INVESTIGADOR DATOS INVÁLIDOS --X-X-X-X-
+INSERT INTO Investigador VALUES ('UDELAR','Jorge Kach','colorado@gmail.com','26018752','Investigador','EDoctor',1);
+INSERT INTO Investigador VALUES ('Horacio Colo','colorado@gmail.com','26079494','Abogado','EDoctor',2,'ORT');
+INSERT INTO Investigador VALUES ('Pablo Sosa','PabloSosa@gmail.com','095663207','Contador','EMaestria',0,'Universidad Catolica');
+
+-- TRABAJO DATOS VÁLIDOS --
+INSERT INTO Trabajo VALUES ('Reparación de células dañadas por quimioterapia','articulo','27/09/2017','http://www.csic.es',2,'A1234','Se descubrió que las células sanas dañadas por la quimioterapia pueden recuperarse mediante la proteína ZATT que restablece las roturas en el ADN provocadas por el tratamiento contra el cáncer.');
+INSERT INTO Trabajo VALUES ('Reducir la ingesta de azúcares en niños es clave para evitar las enfermedades cardiovasculares','articulo','22/03/2017','http://www.universia.es/universidades/universidad-zaragoza/in/10021',1,'A979','Investigación en 400 niños de 9 países europeos para conocer sus hábitos alimenticios. Concluye que un 39% de los niños tienen más chances de presentar un estado inflamatorio elevado.');
+INSERT INTO Trabajo VALUES ('Baterías fabricadas a partir de hongos portobello','otro','05/03/2017','',2,'O74M1','Un nuevo tipo de batería de litio e iones a partir de hongos portobella, materia prima barata, no afecta negativamente al medio ambiente y fácil de producir.');
+INSERT INTO Trabajo VALUES ('Mirar demasiadas horas de televisión puede afectar el rendimiento cognitivo','poster','17/12/2015','https://www.harvard.edu/',3,'P911AH3','Jóvenes que pasan más de tres horas frente al televisor en la etapa adulta podrían llegar a tener problemas de rendimiento cognitivo. Se agravaría todavía más si se combina con la falta de actividad física.');
+
+--X-X-X-X- TRABAJO DATOS INVÁLIDOS --X-X-X-X-
+INSERT INTO Trabajo VALUES ('Reparación de células dañadas por quimioterapia','articulo','27/09/2017','http://www.csic.es',2,'A1234','Se descubrió que las células sanas dañadas por la quimioterapia pueden recuperarse mediante la proteína ZATT que restablece las roturas en el ADN provocadas por el tratamiento contra el cáncer.');
+
+-- Tags DATOS VÁLIDOS --
+INSERT INTO Tags VALUES ('Ingesta niños azúcar enfermedad cardiovascular');
+INSERT INTO Tags VALUES ('Batería hongos portobello medio ambiente');
+INSERT INTO Tags VALUES ('Células dañadas quimioterapia cáncer proteína ZATT');
+
+--X-X-X-X- Tags DATOS INVÁLIDOS --X-X-X-X-
+INSERT INTO Tags VALUES ('Ingesta niños azúcar enfermedad cardiovascular',3);
+INSERT INTO Tags VALUES (4);
+
+-- TTags DATOS VÁLIDOS --
+INSERT INTO TTags VALUES (5,'O74M1');
+INSERT INTO TTags VALUES (3,'A979');
+INSERT INTO TTags VALUES (1,'A1234');
+
+--X-X-X-X- TTags DATOS INVÁLIDOS --X-X-X-X-
+INSERT INTO TTags VALUES (2,'O74M1');
+INSERT INTO TTags VALUES (2,'O74');
+INSERT INTO TTags VALUES ('B825FS4');
+
+-- TAutores DATOS VÁLIDOS --
+INSERT INTO TAutores VALUES (3,'autor-director','A1234');
+INSERT INTO TAutores VALUES (3,'autor-director','O74M1');
+INSERT INTO TAutores VALUES (1,'autor-sec','A1234');
+INSERT INTO TAutores VALUES (2,'autor-ppal','A979');
+
+--X-X-X-X- TAutores DATOS INVÁLIDOS -X-X-X-X-
+INSERT INTO TAutores VALUES ('autor-director','A1234');
+INSERT INTO TAutores VALUES (1,'autor-ppal','Akl123L79');
+INSERT INTO TAutores VALUES (3,'','A979');
+
+-- Referencias DATOS VÁLIDOS --
+INSERT INTO Referencias VALUES ('A979','O74M1');
+INSERT INTO Referencias VALUES ('A979','A1234');
+INSERT INTO Referencias VALUES ('P911AH3','A1234');
+
+--X-X-X-X- Referencias DATOS INVÁLIDOS -X-X-X-X-
+INSERT INTO Referencias VALUES ('A979','A979');
+INSERT INTO Referencias VALUES ('A1234','');
+INSERT INTO Referencias VALUES ('','O74M1');
+
+-- Lugares DATOS VÁLIDOS --
+INSERT INTO Lugares VALUES (1,'Pasillos',2,2017,09,27,29,'','ORT','Revistas','','');
+INSERT INTO Lugares VALUES (2,'Salón Principal',2,2017,10,18,18,'www.universidad.edu.uy','UDELAR','Congresos','18/10/2017','18/10/2017');
+INSERT INTO Lugares VALUES (3,'Salón de Eventos Nº2',2,2017,4,1,7,'www.universidad.edu.uy','UDELAR','Congresos','1/04/2017','07/04/2017');
+INSERT INTO Lugares VALUES (1,'Bibloteca Principal',2,2015,12,27,1,'','ORT','Libros','27/12/2015','01/03/2016');
+
+--X-X-X-X- Lugares DATOS INVÁLIDOS -X-X-X-X--
+INSERT INTO Lugares VALUES ('Pasillos',2,2017,09,27,29,'','ORT','Revistas','','');
+INSERT INTO Lugares VALUES (1,'Salón Principal',2,2016,06,02,29,'','Unversidad de Solymar','Congresos','','');
