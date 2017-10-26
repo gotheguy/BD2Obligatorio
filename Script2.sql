@@ -1,3 +1,6 @@
+USE BD2Obligatorio
+GO
+
 BEGIN TRANSACTION
 
 /*      UNIVERSIDAD       */
@@ -17,10 +20,10 @@ ALTER TABLE Investigador
     DROP COLUMN idInvestigador;
 GO
 ALTER TABLE Investigador
-	ADD  idInvestigador int IDENTITY(1,1) PRIMARY KEY;
+	ADD idInvestigador INT IDENTITY(1,1) PRIMARY KEY;
 GO
 ALTER TABLE Investigador
-	ADD  idUniversidad VARCHAR (50) FOREIGN KEY (idUniversidad) 
+	ADD idUniversidad VARCHAR (50) FOREIGN KEY (idUniversidad) 
 	REFERENCES Universidad(nombre) NOT NULL;
 GO
 ALTER TABLE Investigador
@@ -59,7 +62,7 @@ ALTER TABLE Tags
 	DROP COLUMN idTag;
 GO
 ALTER TABLE Tags
-	ADD  idTag int IDENTITY(1,2) PRIMARY KEY;
+	ADD idTag INT IDENTITY(1,2) PRIMARY KEY;
 GO
 	
 /*      TTags     */
@@ -67,7 +70,7 @@ ALTER TABLE TTags
 	DROP COLUMN idTrab;
 GO
 ALTER TABLE TTags
-	ADD  idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE TTags
 	ADD CONSTRAINT FK_idTag_TTags FOREIGN KEY (idTag)
@@ -86,13 +89,13 @@ ALTER TABLE TAutores
 	DROP COLUMN idTrab;
 GO
 ALTER TABLE TAutores
-	ADD  idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE TAutores
     DROP COLUMN rolinvestig;
 GO
 ALTER TABLE TAutores
-	ADD  rolinvestig VARCHAR (20);
+	ADD rolinvestig VARCHAR (20);
 GO
 ALTER TABLE TAutores
 	ADD CONSTRAINT CK_rolinvestig_TAutores CHECK (rolinvestig IN ('autor-ppal','autor-sec','autor-director'));
@@ -114,7 +117,7 @@ ALTER TABLE Referencias
 	DROP COLUMN idTrab;
 GO
 ALTER TABLE Referencias
-	ADD  idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
+	ADD idTrab varchar (20) NOT NULL; --SE TENDRÁ QUE MODIFICAR idTrab SEGÚN CAMBIO EN TABLA TRABAJO
 GO
 ALTER TABLE Referencias
 	ADD CONSTRAINT CK_idTrab_Referencias CHECK (idTrab <> idTrabReferenciado);
@@ -135,7 +138,7 @@ ALTER TABLE Lugares
     DROP COLUMN nombre;
 GO
 ALTER TABLE Lugares
-	ADD  nombre VARCHAR(250) NOT NULL;
+	ADD nombre VARCHAR(250) NOT NULL;
 GO
 ALTER TABLE Lugares
 	ADD CONSTRAINT UQ_nombre_Lugares UNIQUE (nombre);

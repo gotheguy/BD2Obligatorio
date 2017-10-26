@@ -1,4 +1,10 @@
 /* Creacion de la BD */
+IF EXISTS(SELECT * FROM SysDataBases WHERE name='BD2Obligatorio')
+BEGIN
+	DROP DATABASE BD2Obligatorio
+END
+GO
+
 CREATE DATABASE BD2Obligatorio
 GO
 
@@ -7,7 +13,6 @@ GO
 /* Creacion de tablas */
 
 BEGIN TRANSACTION
-GO
 
 CREATE TABLE Universidad 
 (
