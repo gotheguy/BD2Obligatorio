@@ -34,15 +34,6 @@ ALTER TABLE Investigador
 GO
 	
 /*      TRABAJO     */
-
---idTrab debe modificarse mas adelante. Su PK es un alfanumerico con condiciones
-ALTER TABLE Trabajo
-    DROP COLUMN idTrab;
-GO
-ALTER TABLE Trabajo
-    ADD idTrab VARCHAR (20) PRIMARY KEY;
-GO
-------------------------------------------------------------------------------
 ALTER TABLE Trabajo
     DROP COLUMN descripTrab;
 GO
@@ -55,6 +46,22 @@ GO
 ALTER TABLE Trabajo
 	ADD CONSTRAINT FK_lugarPublic_Lugares FOREIGN KEY (lugarPublic)
 	REFERENCES Lugares (idLugar);
+GO
+--idTrab debe modificarse mas adelante. Su PK es un alfanumerico con condiciones
+ALTER TABLE Trabajo
+    DROP COLUMN idTrab;
+GO
+ALTER TABLE Trabajo
+    ADD idTrab INT IDENTITY(1,1) NOT NULL;
+GO 
+ALTER TABLE Trabajo
+    ADD letra CHAR(1) NOT NULL;
+GO 
+ALTER TABLE Trabajo
+	ADD CONSTRAINT CK_letra_Trabajo CHECK(letra = LEFT(tipoTrab,1));
+GO
+ALTER TABLE Trabajo
+	ADD CONSTRAINT PK_letra_idTrab_Trabajo PRIMARY KEY (letra,idTrab);
 GO
 
 /*    Tags      */
@@ -150,16 +157,12 @@ ALTER TABLE Lugares
 	ADD CONSTRAINT FK_universidad_Lugares FOREIGN KEY (universidad) REFERENCES Universidad (nombre);
 GO
 ALTER TABLE Lugares
-	ADD CONSTRAINT CK_diaIni_Lugares CHECK (TipoLugar IN ('Revistas','Libros'));
+	ADD CONSTRAINT CK_diaIni_diaIniCon_Lugares CHECK (diaIni IS NOT NULL AND diaIniCon IS NULL AND TipoLugar IN ('Revistas','Libros') OR 
+													  diaIniCon IS NOT NULL AND diaIni IS NULL AND TipoLugar = 'Congresos');
 GO
 ALTER TABLE Lugares
-	ADD CONSTRAINT CK_diaFin_Lugares CHECK (TipoLugar IN ('Revistas','Libros'));
-GO
-ALTER TABLE Lugares
-	ADD CONSTRAINT CK_diaIniCon_Lugares CHECK (TipoLugar = 'Congresos');
-GO
-ALTER TABLE Lugares
-	ADD CONSTRAINT CK_diaFinCon_Lugares CHECK (TipoLugar = 'Congresos');
+	ADD CONSTRAINT CK_diaFin_diaFinCon_Lugares CHECK (diaFin IS NOT NULL AND diaFinCon IS NULL AND TipoLugar IN ('Revistas','Libros') OR 
+													  diaFinCon IS NOT NULL AND diaFin IS NULL AND TipoLugar = 'Congresos');
 GO
 
 
