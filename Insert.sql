@@ -175,6 +175,22 @@ INSERT INTO Trabajo VALUES('Cáncer de tiroides','otro','20170121','http://www.in
 GO
 INSERT INTO Trabajo VALUES('Fábricas de ADN','poster','20110904',NULL,18,'A medida que es más y más barato crear trozos grandes de material genético desde el principio, los científicos podrán obtener creaciones biológicas cada vez más complejas.','P');
 GO
+INSERT INTO Trabajo VALUES('Combustible de algas','poster','20030424','https://www.culturacolectiva.com',4,'Entre las ventajas a diferencia del maíz, las algas no necesitan un área extensa para crecer y pueden hacerlo en lugares inapropiados para la actividad agrícola, como los desiertos','P');
+GO
+INSERT INTO Trabajo VALUES('Agua en Marte','articulo','20170316','https://www.culturacolectiva.com',3,'La NASA confirmó el hallazgo de evidencia directa sobre la posible existencia de agua líquida en la superficie de Marte. Todo indica que lo más probable es que sea de la atmósfera.','A');
+GO
+INSERT INTO Trabajo VALUES('Ardi','articulo','20170224','https://www.exploracion.com',3,'Presentado como el antepasado más antiguo del ser humano. Fue catalogada como un Ardipithecus ramidus, una especie de homínido que vivió hace 4.4 millones en lo que hoy es conocido como Etiopía','A');
+GO
+INSERT INTO Trabajo VALUES('Drones','otro','19980913','https://www.culturacolectiva.com',4,'En las peliculas se planteaba la hipervigilancia digital como solución a la criminalidad, y 18 años después, este panorama ya no es ciencia ficción.','O');
+GO
+INSERT INTO Trabajo VALUES('Mariposas salvadoras','otro','20071202','https://www.medicina21.com',11,'Recientemente los entomólogos descubrieron que seguir el rastro de las mariposas comunes puede mostrar cambios climáticos, específicamente aquellas consideradas como especies “basura”.','O');
+GO
+INSERT INTO Trabajo VALUES('Grafeno','articulo','20171030','https://www.culturacolectiva.com',4,'Este material, gracias a su transparencia, flexibilidad y buena conducción de la electricidad, puede crear móviles flexibles, ordenadores que se podrán enrollar como si fueran de papel.','A');
+GO
+INSERT INTO Trabajo VALUES('Inventar la rueda','poster','20170108','https://www.listas.20minutos.es',12,'Una bicicleta eléctrica cabe en una rueda. Ese es el concepto de Rool´in, una rueda que se acopla a cualquier tipo de bicicleta para transformarla en eléctrica.','P');
+GO
+INSERT INTO Trabajo VALUES('Realidad virtual inalámbrica','articulo','20150312','https://www.vr.com',11,'Evitar el cableado que conecta los cascos más potentes a consolas u ordenadores. Project Santa Cruz(VR de Facebook) quiere lograr que las experiencias de realidad virtual sean más espectaculares.','A');
+GO
 --SELECT * FROM Trabajo
 
 
@@ -191,7 +207,8 @@ GO
 --GO
 --INSERT INTO Trabajo VALUES('Baterías fabricadas a partir de hongos portobello','otro','20170305',NULL,2,'Un nuevo tipo de batería de litio e iones a partir de hongos portobella, materia prima barata, no afecta negativamente al medio ambiente y fácil de producir.',NULL);
 --GO
-
+--INSERT INTO Trabajo VALUES('Auto piloto automático','otro','20130707','https://www.culturacolectiva.com',1,'Ford ha dicho que 2021.NuTonomy avisa de que sus taxis sin piloto circularán por Singapur en 2018. Volkswagen habla de 2019.Y Elon Musk, cree que su Tesla totalmente autónomo estará listo para 2018.','P');
+--GO
 
 -- Tags DATOS VÁLIDOS --
 INSERT INTO Tags VALUES('Células');

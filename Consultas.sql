@@ -60,3 +60,15 @@ GROUP BY	u.ciudad,
 			l.link
 
 --HAVING		COUNT(1) = 1
+
+
+--D
+
+SELECT DISTINCT		ta.idInvestigador, MAX(tr.fechaInicio)
+
+FROM		TAutores		AS	ta,
+			Trabajo			AS	tr
+
+WHERE		ta.idTrab=tr.idTrab 
+AND			ta.rolinvestig='autor-ppal'
+GROUP BY	ta.idInvestigador
