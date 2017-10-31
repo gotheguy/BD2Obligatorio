@@ -281,6 +281,22 @@ INSERT INTO Tags VALUES('Tiroides');
 GO
 INSERT INTO Tags VALUES('ADN');
 GO
+INSERT INTO Tags VALUES('Agua');
+GO
+INSERT INTO Tags VALUES('Marte');
+GO
+INSERT INTO Tags VALUES('Algas');
+GO
+INSERT INTO Tags VALUES('Drones');
+GO
+INSERT INTO Tags VALUES('Mariposas');
+GO
+INSERT INTO Tags VALUES('Grafeno');
+GO
+INSERT INTO Tags VALUES('Rueda');
+GO
+INSERT INTO Tags VALUES('Realidad virtual');
+GO
 --SELECT * FROM Tags
 
 
