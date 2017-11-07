@@ -78,7 +78,7 @@ GO
 
 --c
 
-CREATE FUNCTION CantidadTrabajosPublicados 
+ALTER FUNCTION CantidadTrabajosPublicados 
 (
 	@investigador1 INT,
 	@investigador2 INT
@@ -88,14 +88,36 @@ AS
 BEGIN   
 
 DECLARE @cantidad INT
+DECLARE @investigador1 INT = 5
+DECLARE @investigador2 INT = 6
 
-SET @cantidad = (SELECT	DISTINCT	CAST(ta.idTrab AS VARCHAR) + '-' + ta.letra
-				FROM		TAutores	AS	ta	
-				WHERE		@investigador1 = ta.idInvestigador OR @investigador2 = ta.idInvestigador
-				AND			ta.rolinvestig = 'autor-ppal'
-				GROUP BY	CAST(ta.idTrab AS VARCHAR) + '-' + ta.letra
-				HAVING		COUNT(ta.idInvestigador) = 2)
+SELECT		CAST(ta.idTrab AS VARCHAR) + '-' + ta.letra,
+			ta.idInvestigador,
+			ta.rolinvestig
+
+FROM		TAutores	AS	ta	
+WHERE		@investigador1 = ta.idInvestigador OR @investigador2 = ta.idInvestigador
+AND			(@investigador1 IN (SELECT idInvestigador
+							   FROM TAutores
+							   WHERE rolinvestig = 'autor-ppal'
+							   AND idInvestigador = @investigador1
+							   GROUP BY idInvestigador)
+OR			@investigador2 IN (SELECT idInvestigador
+							   FROM TAutores
+							   WHERE rolinvestig = 'autor-ppal'
+							   AND idInvestigador = @investigador2
+							   GROUP BY idInvestigador))
+
+GROUP BY	CAST(ta.idTrab AS VARCHAR) + '-' + ta.letra,
+			ta.idInvestigador,
+			ta.rolinvestig
+HAVING		COUNT(ta.idInvestigador) > 1
+
 
 RETURN @cantidad;
 END
 GO  
+
+select * from tautores where rolinvestig = 'autor-ppal' order by idTrab
+
+--SELECT dbo.CantidadTrabajosPublicados(5,6) AS cantTrabajos
