@@ -45,29 +45,34 @@ ORDER BY	ta.palabra ASC
 
 --C
 
---SELECT DISTINCT		u.*,
---					l.link
+SELECT DISTINCT		u.*,
+					l.link
 
---FROM		Universidad		AS	u
---JOIN		Lugares			AS	l	ON u.nombre	= l.universidad
+FROM		Universidad		AS	u
+JOIN		Lugares			AS	l	ON u.nombre	= l.universidad
 
---WHERE		TipoLugar = 'Congresos'
---AND			nivelLugar = 4
---AND			u.nombre = (SELECT universidad
---						FROM Lugares 
---						WHERE TipoLugar = 'Congresos'
---						AND	nivelLugar = 4
---						GROUP BY universidad
---						HAVING COUNT(*) >= 2)	
---AND			anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
+WHERE		TipoLugar = 'Congresos'
+AND			nivelLugar = 4
+AND			anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
+AND			u.nombre = (SELECT universidad
+						FROM Lugares 
+						WHERE TipoLugar = 'Congresos'
+						AND	nivelLugar = 4
+						GROUP BY universidad
+						HAVING COUNT(*) > 2)
 
---GROUP BY	u.ciudad,
---			u.nombre,
---			u.pais,
---			u.telefono,
---			l.link
+AND l.idLugar IN (SELECT T.lugarPublic
+				  FROM trabajo T
+				  GROUP BY T.lugarPublic
+				  HAVING COUNT (*)>20)
 
---HAVING		COUNT(tipoLugar) = 1
+GROUP BY	u.ciudad,
+			u.nombre,
+			u.pais,
+			u.telefono,
+			l.link
+
+HAVING		COUNT(tipoLugar) = 1
 
 
 --D
