@@ -129,6 +129,8 @@ INSERT INTO Investigador VALUES('Martin Rivero','mriv342@gmail.com','098945525',
 GO --14
 INSERT INTO Investigador VALUES('Leonardo Sereno','lsereno17@gmail.com','099355930','Medicina','EMaestria',4,'Universidad de la Empresa');
 GO --15
+INSERT INTO Investigador VALUES('Eduardo Sereno','edusereno09@gmail.com','099355931','Ingeniería','EGrado',0,'ORT');
+GO --16
 --SELECT * FROM Investigador
 
 --X-X-X-X- INVESTIGADOR DATOS INVÁLIDOS --X-X-X-X-
@@ -261,6 +263,9 @@ INSERT INTO Trabajo VALUES('Una foto pone en duda el viaje del Apolo 17','poster
 GO --59
 INSERT INTO Trabajo VALUES('La NASA muestra imagen del agujero coronal en el Sol','poster','20161110','https://www.tecnoUDE.uy',21,'Casi 50 años después de que el hombre pisara la Luna, la veracidad de otro viaje espacial está bajo la lupa una vez más.','P');
 GO --60
+INSERT INTO Trabajo VALUES('Papel Aluminio aumenta nivel wifi','poster','20170110','https://www.tecnoUDE.uy',1,'Poner papel aluminio en las antenas del router aumenta los nivel de wifi y el alcance del mismo.','P');
+GO --61
+
 
 --SELECT * FROM Trabajo
 
@@ -729,6 +734,14 @@ GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',19,'O');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',20,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',44,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',44,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',46,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(16,'autor-sec',74,'P');
 GO
 --SELECT * FROM TAutores
 
