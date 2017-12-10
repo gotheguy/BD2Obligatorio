@@ -580,6 +580,14 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-p
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-ppal',41,'O');
 GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-sec',54,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-director',55,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-ppal',51,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-director',50,'O');
+GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-ppal',5,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-director',8,'O');
@@ -591,6 +599,16 @@ GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-ppal',16,'O');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-sec',15,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-director',17,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-sec',38,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-sec',37,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-ppal',57,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-ppal',58,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',20,'P');
 GO
@@ -610,6 +628,24 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-s
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-sec',1,'A');
 GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',44,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-director',58,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',49,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',39,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',37,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-director',61,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-sec',60,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-sec',59,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',52,'P');
+GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(5,'autor-ppal',2,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(5,'autor-sec',3,'O');
@@ -628,6 +664,14 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-p
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',2,'A');
 GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',44,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-sec',15,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-sec',21,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-sec',20,'P');
+GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(7,'autor-sec',5,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(7,'autor-director',6,'C');
@@ -640,6 +684,8 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(7,'autor-p
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(7,'autor-director',14,'A');
 GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(7,'autor-ppal',18,'C');
+GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-ppal',14,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-ppal',15,'P');
@@ -647,6 +693,8 @@ GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',16,'O');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-director',6,'C');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',44,'P');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-ppal',1,'A');
 GO
@@ -659,6 +707,14 @@ GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-sec',18,'C');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-sec',19,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-sec',43,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-sec',35,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-director',29,'A');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(9,'autor-ppal',28,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(10,'autor-director',7,'C');
 GO
@@ -675,6 +731,18 @@ GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-ppal',11,'P');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-ppal',18,'C');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',46,'O');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-sec',53,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-sec',44,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',45,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-ppal',42,'P');
+GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',34,'P');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(12,'autor-sec',9,'P');
 GO
@@ -708,14 +776,18 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',20,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',44,'P');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',30,'O');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',44,'P');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-ppal',32,'O');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',44,'P');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',36,'O');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',46,'O');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-ppal',16,'O');
 GO
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-ppal',8,'O');
+GO
+
+
 --SELECT * FROM TAutores
 
 --X-X-X-X- TAutores DATOS INVÁLIDOS -X-X-X-X-

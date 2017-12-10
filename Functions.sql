@@ -188,20 +188,30 @@ AS
 BEGIN   
 
 DECLARE @cantidad INT
-DECLARE	@tipoTrab VARCHAR(20) = 'articulo'
 
---SELECT DISTINCT		ta.idInvestigador	AS	cantInvestigadores
---FROM		Trabajo		AS	t
---JOIN		TAutores	AS	ta	ON t.idTrab		 = ta.idTrab AND t.letra = ta.letra
-----JOIN		Lugares		AS	l	ON t.LugarPublic = l.idLugar
---WHERE		t.tipoTrab = @tipoTrab
-
-
---select distinct * FROM		Trabajo		AS	t
---JOIN		TAutores	AS	ta	ON t.idTrab		 = ta.idTrab AND t.letra = ta.letra where ta.letra = 'a'
+SELECT @cantidad =	(SELECT DISTINCT	COUNT(i.idInvestigador) OVER()	AS	cantInvestigadores
+					FROM		Investigador	AS	i 
+					JOIN		TAutores		AS	ta	ON i.idInvestigador = ta.idInvestigador
+					JOIN		Trabajo			AS	t	ON t.idTrab = ta.idTrab AND t.letra = ta.letra
+					WHERE		t.tipoTrab = @tipoTrab
+					GROUP BY	i.idInvestigador
+					HAVING		COUNT(*) > 5
+					AND			COUNT(*) >= ALL (SELECT DISTINCT COUNT(ta.idInvestigador)
+												FROM		Investigador	AS	i 
+												JOIN		TAutores		AS	ta	ON i.idInvestigador = ta.idInvestigador
+												JOIN		Trabajo			AS	t	ON t.idTrab = ta.idTrab AND t.letra = ta.letra
+												WHERE		t.tipoTrab = @tipoTrab
+												GROUP BY	i.idInvestigador))
 
 RETURN @cantidad
 END
+
 GO  
 
 --SELECT dbo.CantidadInvestigadoresxTipoTrab('Poster')
+
+
+
+
+select distinct * FROM		Trabajo		AS	t
+JOIN	TAutores	AS	ta	ON t.idTrab		 = ta.idTrab AND t.letra = ta.letra where ta.letra = 'p'
