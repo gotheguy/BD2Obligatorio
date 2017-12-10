@@ -51,8 +51,6 @@ SELECT				u.*,
 FROM		Universidad		AS	u,
 			Lugares			AS	l
 WHERE	    u.nombre	= l.universidad
-AND			TipoLugar = 'Congresos'
-AND			nivelLugar = 4
 AND			anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
 AND			u.nombre = (SELECT l2.universidad
 						FROM Lugares l2
@@ -64,13 +62,15 @@ AND			u.nombre = (SELECT l2.universidad
 AND l.idLugar IN (SELECT T.lugarPublic
 				  FROM trabajo T
 				  GROUP BY T.lugarPublic
-				  HAVING COUNT (*)>20)
+				  HAVING COUNT (*) > 20)
 
 GROUP BY	u.ciudad,
 			u.nombre,
 			u.pais,
 			u.telefono,
 			l.link
+
+
 --D
 
 SELECT DISTINCT		ta.idInvestigador, 
@@ -98,7 +98,7 @@ JOIN		Trabajo		 AS t	ON ta.idTrab = t.idTrab AND ta.letra = t.letra
 JOIN		Lugares		 AS	l	ON t.lugarPublic = l.idLugar
 
 WHERE		i.carrera = 'Ingeniería'
-AND			anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
+AND			l.anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
 
 GROUP BY	i.idInvestigador,
 			i.nombre,
@@ -117,7 +117,7 @@ SELECT		i.idInvestigador,
 FROM		Investigador AS i
 JOIN		TAutores	 AS ta	ON i.idInvestigador = ta.idInvestigador
 JOIN		Trabajo		 AS t	ON ta.idTrab = t.idTrab AND ta.letra = t.letra
-JOIN		Lugares		 AS	l	ON t.lugarPublic = l.idLugar
+LEFT JOIN	Lugares		 AS	l	ON t.lugarPublic = l.idLugar
 
 WHERE		l.universidad	= 'ORT'
 AND			l.tipoLugar		= 'Congresos'
@@ -125,6 +125,8 @@ AND			l.nivelLugar	= 4
 AND			YEAR(T.fechaInicio) = YEAR(GETDATE())
 
 GROUP BY	i.idInvestigador
+
+
 
 /* otra F
 SELECT l.idLugar, l.nombre,l.TipoLugar, l.universidad,
@@ -148,8 +150,26 @@ WHERE L.TipoLugar='Congresos'
 GROUP BY l.idLugar, l.nombre, l.universidad, l.TipoLugar
 */
 
+
+--G
+
+SELECT DISTINCT	l.universidad,
+				t.nomTrab,
+				t.tipoTrab,
+				t.fechaInicio,
+				t.linkTrab,
+				t.lugarPublic,
+				t.descripTrab,
+				dbo.UltimoTrabajoxUniversidad(l.universidad) AS UltimoTrabajo
+
+FROM			Trabajo		AS	t
+JOIN			Lugares		AS	l	ON	l.idLugar = t.lugarPublic
+
+WHERE			CAST(t.idTrab AS VARCHAR(20)) + '-' + t.letra =  dbo.UltimoTrabajoxUniversidad(l.universidad)
+
+
 --H
 
 DELETE
-FROM Tags 
-WHERE idTag NOT IN(SELECT idTag FROM TTags)
+FROM	Tags 
+WHERE	idTag NOT IN(SELECT idTag FROM TTags)

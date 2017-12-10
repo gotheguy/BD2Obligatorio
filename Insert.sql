@@ -38,9 +38,9 @@ GO
 -- Lugares DATOS VÁLIDOS --
 INSERT INTO Lugares VALUES(1,'Pasillos',2,2017,9,27,29,NULL,'ORT','Revistas',NULL,NULL);
 GO
-INSERT INTO Lugares VALUES(2,'Salón Principal',3,2017,10,NULL,NULL,'www.eduk.edu.uy','UDELAR','Congresos','18','19');
+INSERT INTO Lugares VALUES(2,'Salón Principal',3,2016,10,NULL,NULL,'www.eduk.edu.uy','UDELAR','Congresos','18','19');
 GO
-INSERT INTO Lugares VALUES(3,'Salón de Eventos Nº2',2,2017,4,NULL,NULL,'www.teoriadelaimagen.com','UDELAR','Congresos','5','16');
+INSERT INTO Lugares VALUES(3,'Salón de Eventos Nº2',2,2015,4,NULL,NULL,'www.teoriadelaimagen.com','UDELAR','Congresos','5','16');
 GO
 INSERT INTO Lugares VALUES(4,'Bibloteca Principal',1,2015,12,'14','16',NULL,'ORT','Libros',NULL,NULL);
 GO
@@ -48,7 +48,7 @@ INSERT INTO Lugares VALUES(5,'Salón de Eventos Nº5',3,2016,5,'1','5',NULL,'UDELA
 GO
 INSERT INTO Lugares VALUES(6,'Sala Común N°2',4,2017,12,'13','14','www.infocongress.com.mx','Universidad de la Empresa','Revistas',NULL,NULL);
 GO
-INSERT INTO Lugares VALUES(7,'Sala Común N°4',1,2017,1,'22','29',NULL,'Universidad de la Empresa','Revistas',NULL,NULL);
+INSERT INTO Lugares VALUES(7,'Sala Común N°4',1,2015,1,'22','29',NULL,'Universidad de la Empresa','Revistas',NULL,NULL);
 GO
 INSERT INTO Lugares VALUES(8,'Bibloteca Anexo N°1',1,2016,4,NULL,NULL,'www.unicon.edu.uy','Universidad de Canelones','Congresos','15','16');
 GO
@@ -58,7 +58,7 @@ INSERT INTO Lugares VALUES(10,'Salón Comunitario',4,2014,8,NULL,NULL,'www.analyt
 GO
 INSERT INTO Lugares VALUES(11,'Sheraton',4,2017,5,NULL,NULL,'www.hopper.com','Universidad de la Empresa','Congresos','4','5');
 GO
-INSERT INTO Lugares VALUES(12,'Centro Comunitario N°1',3,2017,6,'2','9',NULL,'ORT','Revistas',NULL,NULL);
+INSERT INTO Lugares VALUES(12,'Centro Comunitario N°1',3,2016,6,'2','9',NULL,'ORT','Revistas',NULL,NULL);
 GO
 INSERT INTO Lugares VALUES(13,'Bibloteca Segundo Piso',2,2017,9,'1','5',NULL,'Universidad de Canelones','Revistas',NULL,NULL);
 GO
@@ -105,11 +105,11 @@ INSERT INTO Investigador VALUES('Marcelo Sosa','sosaM@gmail.com','093664501','In
 GO --2
 INSERT INTO Investigador VALUES('Juan Perez','jp@gmail.com','098743213','Ingeniería','EMaestria',6,'ORT');
 GO --3
-INSERT INTO Investigador VALUES('Gonzalo Gonzalez','gongonza@hotmail.com','091563487','Medicina','EDoctor',9,'ORT');
+INSERT INTO Investigador VALUES('Gonzalo Gonzalez','gongonza@hotmail.com','091563487','Medicina','EDoctor',10,'ORT');
 GO --4
 INSERT INTO Investigador VALUES('Pablo Sosa','PabloSosa@gmail.com','095663207','Medicina','EMaestria',3,'Universidad Catolica');
 GO --5
-INSERT INTO Investigador VALUES('Juan Colo','colorado@gmail.com','094755203','Medicina','EDoctor',6,'ORT');
+INSERT INTO Investigador VALUES('Juan Colo','colorado@gmail.com','094755203','Medicina','EDoctor',7,'ORT');
 GO --6
 INSERT INTO Investigador VALUES('Luis Gonzalez','LuisG@gmail.com','091000123','Ingeniería','EGrado',6,'Universidad de la Empresa');
 GO --7
@@ -117,11 +117,11 @@ INSERT INTO Investigador VALUES('Patricio Moreira','pmor34@hotmail.com','0947552
 GO --8
 INSERT INTO Investigador VALUES('Alberto Soto','albertsot32@gmail.com','099697589','Medicina','Doctor',6,'Universidad Catolica');
 GO --9
-INSERT INTO Investigador VALUES('Joaquin Lasarte','jlas3@gmail.com','095787520','Ingeniería','EGrado',4,'UDELAR');
+INSERT INTO Investigador VALUES('Joaquin Lasarte','jlas3@gmail.com','095787520','Ingeniería','EGrado',2,'UDELAR');
 GO --10
 INSERT INTO Investigador VALUES('Pedro Torreira','ptorreira@gmail.com','099605879','Medicina','EDoctor',4,'ORT');
 GO --11
-INSERT INTO Investigador VALUES('Manuel Maldonado','mm3252@gmail.com','095289647','Medicina','EGrado',3,'UDELAR');
+INSERT INTO Investigador VALUES('Manuel Maldonado','mm3252@gmail.com','095289647','Medicina','EGrado',1,'UDELAR');
 GO --12
 INSERT INTO Investigador VALUES('Matias Beri','mberi3@hotmail.com','099305122','Medicina','Doctor',4,'Universidad Catolica');
 GO --13
@@ -143,17 +143,17 @@ GO --16
 
 
 -- TRABAJO DATOS VÁLIDOS --
-INSERT INTO Trabajo VALUES('Reparación de células dañadas por quimioterapia','articulo','20170927','http://www.csic.es',2,'Se descubrió que las células sanas dañadas por la quimioterapia pueden recuperarse mediante la proteína ZATT que restablece las roturas en el ADN provocadas por el tratamiento contra el cáncer.','A');
+INSERT INTO Trabajo VALUES('Reparación de células dañadas por quimioterapia','articulo','20160927','http://www.csic.es',2,'Se descubrió que las células sanas dañadas por la quimioterapia pueden recuperarse mediante la proteína ZATT que restablece las roturas en el ADN provocadas por el tratamiento contra el cáncer.','A');
 GO --1
 INSERT INTO Trabajo VALUES('Reducir la ingesta de azúcares en niños es clave para evitar las enfermedades cardiovasculares','articulo','20170322','http://www.universia.es/universidades/universidad-zaragoza/in/10021',1,'Investigación en 400 niños de 9 países europeos para conocer sus hábitos alimenticios. Concluye que un 39% de los niños tienen más chances de presentar un estado inflamatorio elevado.','A');
 GO --2
-INSERT INTO Trabajo VALUES('Baterías fabricadas a partir de hongos portobello','otro','20170305',NULL,2,'Un nuevo tipo de batería de litio e iones a partir de hongos portobella, materia prima barata, no afecta negativamente al medio ambiente y fácil de producir.','O');
+INSERT INTO Trabajo VALUES('Baterías fabricadas a partir de hongos portobello','otro','20160305',NULL,2,'Un nuevo tipo de batería de litio e iones a partir de hongos portobella, materia prima barata, no afecta negativamente al medio ambiente y fácil de producir.','O');
 GO --3
 INSERT INTO Trabajo VALUES('Mirar demasiadas horas de televisión puede afectar el rendimiento cognitivo','poster','20170306','https://www.harvard.edu',9,'Jóvenes que pasan más de tres horas frente al televisor en la etapa adulta podrían llegar a tener problemas de rendimiento cognitivo.','P');
 GO --4
 INSERT INTO Trabajo VALUES('La globalización de las bases de datos','articulo','20140422','http://www.dbaspot.com',10,'Las bases de datos se ingeniaron gracias a la necesidad de las grandes empresas de almacenar ingentes cantidades de información de una forma rápida, sencilla y fiable','A');
 GO --5
-INSERT INTO Trabajo VALUES('Bases de datos para el mundo empresarial','capitulo','20160802','http://www.revistabyte.es/comparativa-byte-ti',7,'Las bases de datos, a las que también es posible referirse como bancos de información, son muy utilizadas por compañías de distintos tamaño, trabajadores autónomos e, incluso, hogares residenciales.','C');
+INSERT INTO Trabajo VALUES('Bases de datos para el mundo empresarial','capitulo','20140802','http://www.revistabyte.es/comparativa-byte-ti',7,'Las bases de datos, a las que también es posible referirse como bancos de información, son muy utilizadas por compañías de distintos tamaño, trabajadores autónomos e, incluso, hogares residenciales.','C');
 GO --6
 INSERT INTO Trabajo VALUES('Base Mundial de Datos sobre Marcas','capitulo','20140101',NULL,6,'Esta base de datos es un portal de acceso a más de 33.330.000 entradas de& 35 colecciones nacionales e internacionales.','C');
 GO --7
@@ -265,8 +265,6 @@ INSERT INTO Trabajo VALUES('La NASA muestra imagen del agujero coronal en el Sol
 GO --60
 INSERT INTO Trabajo VALUES('Papel Aluminio aumenta nivel wifi','poster','20170110','https://www.tecnoUDE.uy',1,'Poner papel aluminio en las antenas del router aumenta los nivel de wifi y el alcance del mismo.','P');
 GO --61
-
-
 --SELECT * FROM Trabajo
 
 
@@ -521,71 +519,46 @@ INSERT INTO TTags (idTag,idTrab,letra) VALUES(67,19,'O');
 GO
 INSERT INTO TTags (idTag,idTrab,letra) VALUES(69,20,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(71,41,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(71,41,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(73,42,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(73,42,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(75,43,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(75,43,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(77,44,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(77,44,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(79,46,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(79,46,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(81,47,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(81,47,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(83,48,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(83,48,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(85,49,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(85,49,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(87,50,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(87,50,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(89,51,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(89,51,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(91,52,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(91,52,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(93,53,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(93,53,'P');
 GO
 INSERT INTO TTags (idTag,idTrab,letra) VALUES(95,54,'O');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(97,55,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(97,55,'O');
 GO
 INSERT INTO TTags (idTag,idTrab,letra) VALUES(99,56,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(101,57,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(101,57,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(103,58,'P');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(103,58,'A');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(105,59,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(105,59,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(107,60,'A');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(107,60,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(109,61,'O');
+INSERT INTO TTags (idTag,idTrab,letra) VALUES(109,61,'P');
 GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(111,62,'A');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(113,63,'O');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(115,64,'O');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(117,65,'P');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(119,66,'P');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(121,67,'O');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(123,68,'O');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(125,69,'A');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(127,70,'A');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(129,71,'A');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(131,72,'P');
-GO
-INSERT INTO TTags (idTag,idTrab,letra) VALUES(133,73,'P');
-GO
-
 --SELECT * FROM TTags
 
 --X-X-X-X- TTags DATOS INVÁLIDOS --X-X-X-X-
@@ -605,7 +578,7 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-d
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-ppal',8,'O');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-ppal',41,'A');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(1,'autor-ppal',41,'O');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(3,'autor-ppal',5,'A');
 GO
@@ -643,15 +616,15 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(5,'autor-s
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(5,'autor-sec',4,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',13,'O');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',18,'C');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-director',1,'A');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-director',3,'O');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',4,'P');
-GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',9,'P');
+GO 
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',11,'P');
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',2,'A');
 GO
@@ -735,13 +708,13 @@ INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-
 GO
 INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(15,'autor-sec',20,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',44,'O');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(8,'autor-sec',44,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',44,'O');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(4,'autor-ppal',44,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',46,'P');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(6,'autor-ppal',44,'P');
 GO
-INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(16,'autor-sec',74,'P');
+INSERT INTO TAutores (idInvestigador,rolinvestig,idTrab,letra) VALUES(11,'autor-director',46,'O');
 GO
 --SELECT * FROM TAutores
 
@@ -780,7 +753,17 @@ INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALU
 GO
 INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(19,'O',3,'O');
 GO
-INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(19,'O',3,'O');
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(20,'P',13,'O');
+GO
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(11,'P',13,'O');
+GO
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(57,'A',17,'A');
+GO
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(46,'O',18,'C');
+GO
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(3,'O',17,'A');
+GO
+INSERT INTO Referencias (idTrab,letra,idTrabReferenciado,letraReferenciado) VALUES(12,'C',17,'A');
 GO
 --SELECT * FROM Referencias
 
@@ -797,6 +780,6 @@ GO
 --INSERT INTO Referencias VALUES(1,'A',4,NULL);
 --GO
 
-
+ 
 --COMMIT TRANSACTION
 --ROLLBACK TRANSACTION
