@@ -29,15 +29,31 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		INSERT INTO Trabajo SELECT
-		nomTrab = @nomTrab,
-		tipoTrab = @tipoTrab,
-		fechaInicio = @fechaInicio,
-		linkTrab = @linkTrab,
-		lugarPublic = @lugarPublic,
-		descripTrab = @descripTrab,
-		letra = @letra
-		FROM inserted i
+
+		IF EXISTS (SELECT 1 FROM inserted AS i WHERE i.nomTrab = @nomTrab)
+		BEGIN
+			UPDATE Trabajo
+			SET nomTrab = @nomTrab,
+				tipoTrab = @tipoTrab,
+				fechaInicio = @fechaInicio,
+				linkTrab = @linkTrab,
+				lugarPublic = @lugarPublic,
+				descripTrab = @descripTrab,
+				letra = @letra
+			WHERE i.nomTrab = @nomTrab
+		END
+		ELSE
+		BEGIN
+			INSERT INTO Trabajo SELECT
+			nomTrab = @nomTrab,
+			tipoTrab = @tipoTrab,
+			fechaInicio = @fechaInicio,
+			linkTrab = @linkTrab,
+			lugarPublic = @lugarPublic,
+			descripTrab = @descripTrab,
+			letra = @letra
+			FROM inserted i
+		END
 	END
 END
 GO
