@@ -95,6 +95,25 @@ CREATE TABLE Lugares
 	universidad VARCHAR(50) 
 )
 GO
+
+CREATE TABLE TablaAuxiliar 
+(
+	idLugar		INT PRIMARY KEY, 
+	nombre		VARCHAR(100) NOT NULL, 
+	nivelLugar	INT, 
+	anio		INT NOT NULL, 
+	mes			INT NOT NULL, 
+	diaIni		INT, 
+	diaFin		INT,
+	link		VARCHAR(200), 
+	universidad VARCHAR(50),
+	usuario VARCHAR(100),
+	fecha date,
+	tipoLugar varchar(20),
+	diaIniCon int,
+	diaFinCon int
+)
+GO
 --SELECT * FROM Lugares
 
 	

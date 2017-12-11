@@ -18,7 +18,11 @@ BEGIN
 	AND tra.idTrab = tt.idTrab
 	AND t.idTag = tt.idTag;
 
+<<<<<<< HEAD:Triggers.sql
 IF (@palabraClaveInsert IS NOT NULL AND @palabraClaveInsert LIKE '%'+@palabraClaveReferencia+'%')
+=======
+IF ((@palabraClaveInsert IS NOT NULL)AND(CHARINDEX(@palabraClaveInsert,@palabraClaveReferencia, 0) > 0))
+>>>>>>> 67326199fe8b8b480f5113202a687d932d3bf44e:Trigger_5C.sql
 		BEGIN
 			PRINT('Los trabajos comparten como mínimo una misma palabra clave')
 			ROLLBACK
