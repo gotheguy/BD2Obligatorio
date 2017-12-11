@@ -7,21 +7,38 @@ INSTEAD OF INSERT
 AS 
 DECLARE @nomTrab VARCHAR(100),
 		@tipoTrab VARCHAR(50),
-		@fechaIinicio DATE,
+		@fechaInicio DATE,
 		@linkTrab VARCHAR(100),
 		@lugarPublic INT,
 		@descripTrab VARCHAR(200),
 		@idTrab INT,
-		@letra CHAR(1)
-FOR EACH ROW
+		@letra CHAR(1),
+		@cantidad int
 BEGIN
 
-	SELECT @nomTrab = i.nomTrab, @tipoTrab = i.tipoTrab, @fechaIinicio = ISNULL(i.fechaInicio,CAST(YEAR(GETDATE()) AS VARCHAR(10)) + '0101'), 
+	SELECT @nomTrab = i.nomTrab, @tipoTrab = i.tipoTrab, @fechaInicio = ISNULL(i.fechaInicio,CAST(YEAR(GETDATE()) AS VARCHAR(10)) + '0101'), 
 	@linkTrab = i.linkTrab, @lugarPublic = i.lugarPublic, @descripTrab = i.descripTrab, @idTrab = i.idTrab, @letra = i.letra
 	FROM inserted I
 
+	SELECT @cantidad = COUNT(*) FROM inserted
 
-
+	IF (@cantidad <=1)
+	BEGIN
+		INSERT INTO Trabajo
+		VALUES (@nomTrab,@tipoTrab,@fechaInicio,@linkTrab,@lugarPublic,@descripTrab,@letra)
+	END
+	ELSE
+	BEGIN
+		INSERT INTO Trabajo SELECT
+		nomTrab = @nomTrab,
+		tipoTrab = @tipoTrab,
+		fechaInicio = @fechaInicio,
+		linkTrab = @linkTrab,
+		lugarPublic = @lugarPublic,
+		descripTrab = @descripTrab,
+		letra = @letra
+		FROM inserted i
+	END
 END
 GO
 
