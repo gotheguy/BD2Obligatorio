@@ -33,7 +33,7 @@ DECLARE @trabajo VARCHAR(100) = (SELECT TOP 1 CAST(t.idTrab AS VARCHAR(20)) + '-
 RETURN @trabajo
 END
 GO  
---SELECT dbo.UltimoTrabajoxUniversidad('ORT')
+--SELECT dbo.UltimoTrabajoxUniversidad('ORT') AS idTrab
 
 
 --B
@@ -153,7 +153,7 @@ RETURN @cantidad
 END
 GO
 
---SELECT dbo.CantTrabajosXPalabraClave(2015,2017,'Base')
+--SELECT dbo.CantTrabajosXPalabraClave(2015,2017,'Base') AS	CantTrabajos
 
 
 --F
@@ -174,7 +174,7 @@ RETURN @id
 END
 GO  
 
---SELECT dbo.NuevoIdTipoTrabajo('Ensayo')
+--SELECT dbo.NuevoIdTipoTrabajo('Ensayo')	AS	nuevoId
 
 
 --G
@@ -217,11 +217,11 @@ SET @rowcount = @@ROWCOUNT
 
 IF @rowcount > 0
 BEGIN	
-	SELECT tmp.*,('Existe un último artículo publicado en ' + @universidad) AS Mensaje FROM #tmp AS tmp
+	SELECT tmp.*,('Existe un artículo publicado en ' + @universidad) AS Mensaje FROM #tmp AS tmp
 END
 ELSE 
 BEGIN
-	SELECT ('No existe un último artículo publicado en ' + @universidad) AS Mensaje
+	SELECT ('No existe un artículo publicado en ' + @universidad) AS Mensaje
 END
 
 
@@ -261,4 +261,4 @@ RETURN @cantidad
 END
 
 GO  
---SELECT dbo.CantidadInvestigadoresxTipoTrab('Poster')
+--SELECT dbo.CantidadInvestigadoresxTipoTrab('Poster')	AS	CantInvestigadores

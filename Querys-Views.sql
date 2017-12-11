@@ -1,6 +1,35 @@
 USE BD2Obligatorio
 GO
 
+CREATE VIEW PARTE7A AS(
+SELECT		L.idLugar,L.universidad,  COUNT(DISTINCT(t.idTrab)) AS 'Cantidad Trabajos Publicados'
+FROM		LUGARES			 AS l
+JOIN		Investigador	 AS i	ON i.idUniversidad <> l.universidad
+JOIN		TAutores		 AS ta	ON ta.idInvestigador = i.idInvestigador
+JOIN		Trabajo			 AS	t	ON t.lugarPublic = l.idLugar AND t.idTrab=ta.idTrab AND t.letra = ta.letra
+WHERE L.TipoLugar='Congresos'
+GROUP BY L.idLugar,L.universidad
+)
+GO
+--SELECT * FROM PARTE7A
+
+
+CREATE VIEW PARTE7B AS(
+SELECT I.idInvestigador, t.tipoTrab,
+	(SELECT MIN(T.fechaInicio) 
+	FROM TRABAJO T, TAutores TA WHERE I.idInvestigador = TA.idInvestigador
+	AND T.idTrab = TA.idTrab) AS 'FECHA PRIMER TRABAJO',
+	(SELECT MAX(T.fechaInicio) 
+	FROM TRABAJO T, TAutores TA WHERE I.idInvestigador = TA.idInvestigador
+	AND T.idTrab = TA.idTrab) AS 'FECHA ULTIMO TRABAJO'
+FROM		Investigador I
+LEFT JOIN	TAutores	 TA		ON i.idinvestigador = ta.idInvestigador 
+LEFT JOIN	Trabajo		 T		ON ta.idTrab = t.idTrab and ta.letra = t.letra
+GROUP BY I.idInvestigador, t.tipoTrab, TA.letra
+)
+GO
+--SELECT * FROM Parte7B
+
 --A
 
 SELECT		CAST(t.idTrab AS VARCHAR(20)) + '-' + t.letra AS idTrab,
