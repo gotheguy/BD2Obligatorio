@@ -50,6 +50,7 @@ SELECT				u.*,
 
 FROM		Universidad		AS	u,
 			Lugares			AS	l
+
 WHERE	    u.nombre	= l.universidad
 AND			anio BETWEEN YEAR(GETDATE())-5 AND YEAR(GETDATE())
 AND			u.nombre = (SELECT l2.universidad
@@ -126,29 +127,6 @@ AND			YEAR(T.fechaInicio) = YEAR(GETDATE())
 
 GROUP BY	i.idInvestigador
 
-
-
-/* otra F
-SELECT l.idLugar, l.nombre,l.TipoLugar, l.universidad,
-			(select DISTINCT COUNT(*) 
-			FROM TRABAJO T, LUGARES L2 
-			WHERE T.lugarPublic=L2.idLugar
-			AND L2.idLugar = L.idLugar 
-			AND L2.TipoLugar='Congresos'
-			AND l2.idLugar IN (SELECT t2.lugarPublic
-							  FROM trabajo t2, TAutores TA, Investigador i
-							  where l2.idLugar=t2.lugarPublic
-							  AND TA.idTrab = t2.idTrab
-							  AND I.idUniversidad!=L.universidad
-							  and l.TipoLugar = 'Congresos'
-							  group by t2.lugarPublic)
-			) as TrabajosPublicados
-FROM LUGARES l 
-WHERE L.TipoLugar='Congresos'
-	AND l.idLugar IN (SELECT t.lugarPublic
-					 FROM trabajo t)
-GROUP BY l.idLugar, l.nombre, l.universidad, l.TipoLugar
-*/
 
 
 --G

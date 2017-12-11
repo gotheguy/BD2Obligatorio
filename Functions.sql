@@ -177,6 +177,60 @@ GO
 --SELECT dbo.NuevoIdTipoTrabajo('Ensayo')
 
 
+--G
+
+CREATE PROCEDURE CongresoUltimoArticulo
+(
+	@universidad VARCHAR(100)
+)  
+AS  
+BEGIN  
+
+DECLARE	@rowcount INT 
+
+IF OBJECT_ID('tempdb.dbo.#tmp') IS NOT NULL
+DROP TABLE #tmp
+
+SELECT TOP 1	l.*,
+				CASE
+				WHEN l.TipoLugar = 'Congresos'
+				THEN (CAST(CAST(l.anio AS VARCHAR(4)) +
+						RIGHT('0' + CAST(l.mes AS VARCHAR(2)), 2) +
+						RIGHT('0' + CAST(l.diaIniCon AS VARCHAR(2)), 2) AS DATE)) 
+				ELSE (CAST(CAST(l.anio AS VARCHAR(4)) +
+						RIGHT('0' + CAST(l.mes AS VARCHAR(2)), 2) +
+						RIGHT('0' + CAST(l.diaIni AS VARCHAR(2)), 2) AS DATE)) 
+				END AS FechaPublic
+
+INTO		#tmp	
+
+FROM		Trabajo		AS	t 
+JOIN		Lugares		AS	l	ON	t.lugarPublic = l.idLugar
+
+WHERE		l.TipoLugar = 'Congresos'
+AND			l.universidad = @universidad
+AND			t.tipoTrab = 'articulo'
+
+ORDER BY	FechaPublic DESC
+
+SET @rowcount = @@ROWCOUNT
+
+IF @rowcount > 0
+BEGIN	
+	SELECT tmp.*,('Existe un último artículo publicado en ' + @universidad) AS Mensaje FROM #tmp AS tmp
+END
+ELSE 
+BEGIN
+	SELECT ('No existe un último artículo publicado en ' + @universidad) AS Mensaje
+END
+
+
+END
+GO
+--EXEC dbo.CongresoUltimoArticulo'UDELAR'
+
+
+
 --H
 
 CREATE FUNCTION CantidadInvestigadoresxTipoTrab 
@@ -207,11 +261,4 @@ RETURN @cantidad
 END
 
 GO  
-
 --SELECT dbo.CantidadInvestigadoresxTipoTrab('Poster')
-
-
-
-
-select distinct * FROM		Trabajo		AS	t
-JOIN	TAutores	AS	ta	ON t.idTrab		 = ta.idTrab AND t.letra = ta.letra where ta.letra = 'p'

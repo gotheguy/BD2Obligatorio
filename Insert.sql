@@ -266,7 +266,7 @@ GO --60
 INSERT INTO Trabajo VALUES('Papel Aluminio aumenta nivel wifi','poster','20170110','https://www.tecnoUDE.uy',1,'Poner papel aluminio en las antenas del router aumenta los nivel de wifi y el alcance del mismo.','P');
 GO --61
 --SELECT * FROM Trabajo
-
+select * from lugares
 
 --X-X-X-X- TRABAJO DATOS INVÁLIDOS --X-X-X-X-
 --INSERT INTO Trabajo VALUES(NULL,'poster','20170927',NULL,3,'Se descubrió que las células sanas dañadas por la quimioterapia pueden recuperarse mediante la proteína ZATT que restablece las roturas en el ADN provocadas por el tratamiento contra el cáncer.','P');

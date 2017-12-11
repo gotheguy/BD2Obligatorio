@@ -18,7 +18,7 @@ BEGIN
 	AND tra.idTrab = tt.idTrab
 	AND t.idTag = tt.idTag;
 
-IF ((@palabraClaveInsert IS NOT NULL) AND (@palabraClaveInsert LIKE '%'+@palabraClaveReferencia+'%'))
+IF (@palabraClaveInsert IS NOT NULL AND @palabraClaveInsert LIKE '%'+@palabraClaveReferencia+'%')
 		BEGIN
 			PRINT('Los trabajos comparten como mínimo una misma palabra clave')
 			ROLLBACK
