@@ -3,7 +3,7 @@ GO
 
 
 CREATE TRIGGER Parte5A ON Trabajo
-INSTEAD OF INSERT
+AFTER INSERT
 AS 
 DECLARE @nomTrab VARCHAR(100),
 		@tipoTrab VARCHAR(50),
@@ -12,24 +12,13 @@ DECLARE @nomTrab VARCHAR(100),
 		@lugarPublic INT,
 		@descripTrab VARCHAR(200),
 		@idTrab INT,
-		@letra CHAR(1),
-		@cantidad int
+		@letra CHAR(1)
 BEGIN
 
 	SELECT @nomTrab = i.nomTrab, @tipoTrab = i.tipoTrab, @fechaInicio = ISNULL(i.fechaInicio,CAST(YEAR(GETDATE()) AS VARCHAR(10)) + '0101'), 
 	@linkTrab = i.linkTrab, @lugarPublic = i.lugarPublic, @descripTrab = i.descripTrab, @idTrab = i.idTrab, @letra = i.letra
 	FROM inserted I
-
-	SELECT @cantidad = COUNT(*) FROM inserted
-
-	IF (@cantidad <=1)
 	BEGIN
-		INSERT INTO Trabajo
-		VALUES (@nomTrab,@tipoTrab,@fechaInicio,@linkTrab,@lugarPublic,@descripTrab,@letra)
-	END
-	ELSE
-	BEGIN
-
 		IF EXISTS (SELECT 1 FROM inserted AS i WHERE i.nomTrab = @nomTrab)
 		BEGIN
 			UPDATE Trabajo
@@ -40,7 +29,8 @@ BEGIN
 				lugarPublic = @lugarPublic,
 				descripTrab = @descripTrab,
 				letra = @letra
-			WHERE i.nomTrab = @nomTrab
+			FROM Trabajo AS t
+			WHERE t.nomTrab = @nomTrab
 		END
 		ELSE
 		BEGIN
